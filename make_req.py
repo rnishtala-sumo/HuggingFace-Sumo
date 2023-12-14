@@ -4,7 +4,7 @@ import json
 #%%
 # url = "http://127.0.0.1:5000/" # for flask
 url = "http://localhost:9000/" # for docker if exposed to 9000
-data = ["Name: Neil, SSN: 12345, Address: 1234 Main St. City Anytown State NY Zip 12345, Phone: 123-456-7890, DOB: 01/01/2000"]
+data = ["Hello, my name is John Doe. I live at 123 Apple Road, New York, NY 10001, and my phone number is (123) 456-7890. I work for Tech Corp. and my email address is john.doe@techcorp.com."]
 j_data = json.dumps(data)
 headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
 r = requests.post(url, data=j_data, headers=headers)
