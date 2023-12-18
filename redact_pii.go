@@ -19,8 +19,8 @@ type Entity struct {
 }
 
 func main() {
-	// inputString := `Hello, my name is John Doe. My password is abc123. I live at 123 Apple Road, New York, NY 10001, and my phone number is (123) 456-7890. I work for Tech Corp. and my email address is john.doe@techcorp.com.`
-	inputString := `My password is abc123`
+	inputString := `Hello, my name is John Doe. My password is abc123. I live at 123 Apple Road, New York, NY 10001, and my phone number is (123) 456-7890. I work for Tech Corp. and my email address is john.doe@techcorp.com.`
+	// inputString := `My password is abc123`
 	fmt.Println("Input string:\n" + inputString)
 
 	jsonValue, _ := json.Marshal(inputString)
