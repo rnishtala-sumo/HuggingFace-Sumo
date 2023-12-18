@@ -21,6 +21,16 @@ Applying the BERT model to NER tasks, such as detecting PII, involves training t
 
 The general principle applied in this case is that the model was trained to detect PII through its understanding of the dataset it was trained on. This enables the model to identify sentences and word patterns that have the potential to be PII.
 
+## HuggingFace Model
+
+The following model was used for this PoC
+
+https://huggingface.co/ArunaSaraswathy/bert-finetuned-ner-pii/tree/main
+
+## Overview
+
+![PII image](./PII.png)
+
 ## API
 
 **Required libraries:** Flask, transformers, tensorflow. (pip or conda as you wish, I used pip) 
@@ -94,11 +104,19 @@ Input string:
 Hello, my name is John Doe. My password is abc123. I live at 123 Apple Road, New York, NY 10001, and my phone number is (123) 456-7890. I work for Tech Corp. and my email address is john.doe@techcorp.com.
 
 
+Detected entity: B-PER John (confidence: 0.997769)
+Detected entity: L-PER Do (confidence: 0.999665)
+Detected entity: U-PER ##e (confidence: 0.999339)
 Detected entity: U-PASSWORD a (confidence: 0.845202)
 Detected entity: U-PASSWORD ##b (confidence: 0.868154)
 Detected entity: U-PASSWORD ##c (confidence: 0.887825)
 Detected entity: U-PASSWORD ##12 (confidence: 0.973646)
 Detected entity: U-PASSWORD ##3 (confidence: 0.767429)
+Detected entity: I-LOC NY (confidence: 0.999929)
+Detected entity: L-LOC 1000 (confidence: 0.999734)
+Detected entity: U-LOC ##1 (confidence: 0.996582)
+................................................
+................................................
 
 Masked input string:
 Hello, my name is **** ***. My password is ******. I live ** *** ***** ***** *** ***** ** *****, and my phone number is ***** ********. I work *** **** ***** and my email address is *********************.
